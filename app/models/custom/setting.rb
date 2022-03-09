@@ -35,7 +35,14 @@ class Setting
           "process.debates": false,
           "process.proposals": false,
           "process.budgets": false,
-          "process.legislation": false
+          "process.legislation": false,
+          url: "http://example.com",
+          org_name: "Innoviris",
+          meta_title: "Definition pending",
+          meta_description: "Definition pending",
+          meta_keywords: "Definition pending",
+          mailer_from_name: "CONSUL",
+          mailer_from_address: "noreply@consul.dev"
         })
       end
     end
