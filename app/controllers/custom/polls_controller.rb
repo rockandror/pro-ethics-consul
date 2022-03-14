@@ -1,6 +1,8 @@
 require_dependency Rails.root.join("app", "controllers", "polls_controller").to_s
 
 class PollsController < ApplicationController
+  include GuestUsers
+
   def show
     @questions = @poll.questions.for_render.sort_for_list
     @token = poll_voter_token(@poll, current_user)

@@ -19,5 +19,24 @@ describe "Polls" do
         expect(page).to have_link("No")
       end
     end
+
+    scenario "Guest users can answer the poll questions" do
+      Setting["feature.user.skip_verification"] = true
+      question = create(:poll_question, :yes_no, poll: poll)
+
+      visit poll_path(poll)
+
+      within("#poll_question_#{question.id}_answers") do
+        click_link "Yes"
+
+        expect(page).not_to have_link("Yes")
+        expect(page).to have_link("No")
+
+        click_link "No"
+
+        expect(page).not_to have_link("No")
+        expect(page).to have_link("Yes")
+      end
+    end
   end
 end

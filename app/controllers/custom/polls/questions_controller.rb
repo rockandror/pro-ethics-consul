@@ -1,6 +1,8 @@
 require_dependency Rails.root.join("app", "controllers", "polls", "questions_controller").to_s
 
 class Polls::QuestionsController < ApplicationController
+  include GuestUsers
+
   def answer
     answer = @question.answers.find_or_initialize_by(author: current_user)
     token = params[:token]

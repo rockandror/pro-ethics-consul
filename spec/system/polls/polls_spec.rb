@@ -242,7 +242,7 @@ describe "Polls" do
       end
     end
 
-    scenario "Non-logged in users" do
+    scenario "Non-logged in users", :consul do
       create(:poll_question, :yes_no, poll: poll)
 
       visit poll_path(poll)
