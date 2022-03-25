@@ -1,60 +1,137 @@
 require "rails_helper"
 
 describe "Polls" do
+  before { Setting["feature.user.skip_verification"] = true }
+
   describe "Index" do
-    scenario "Displays icon correctly", :consul do
-      create_list(:poll, 3)
+    scenario "Displays icon correctly for guest users" do
+      poll = create(:poll)
+      create(:poll_question, :yes_no, poll: poll)
 
       visit polls_path
 
       expect(page).not_to have_css(".not-logged-in")
       expect(page).not_to have_content("You must sign in or sign up to participate")
 
-      user = create(:user)
-      login_as(user)
+      visit poll_path(poll)
+
+      choose "Yes"
+      click_button "Vote"
+
+      expect(page).to have_content("Poll saved successfully!")
 
       visit polls_path
 
-      expect(page).to have_css(".unverified", count: 3)
-      expect(page).to have_content("You must verify your account to participate")
+      expect(page).to have_css(".already-answer")
+      expect(page).to have_content("You already have participated in this poll")
     end
   end
 
   context "Show" do
-    let(:geozone) { create(:geozone) }
-    let(:poll) { create(:poll, summary: "Summary", description: "Description") }
+    let(:poll) { create(:poll) }
 
-    scenario "Level 2 users who have already answered" do
-      question = create(:poll_question, :yes_no, poll: poll)
-      no = question.question_answers.last
-      user = create(:user, :level_two)
-      create(:poll_answer, question: question, author: user, answer: no)
+    scenario "Question answers appear in the given order" do
+      question = create(:poll_question, poll: poll)
+      answer1 = create(:poll_question_answer, title: "First answer", question: question, given_order: 2)
+      answer2 = create(:poll_question_answer, title: "Second answer", question: question, given_order: 1)
 
-      login_as user
       visit poll_path(poll)
 
-      within("#poll_question_#{question.id}_answers") do
-        expect(page).to have_link("Yes")
-        expect(page).to have_link("No")
+      expect(answer2.title).to appear_before(answer1.title)
+    end
+
+    scenario "Guest users in an expired poll" do
+      expired_poll = create(:poll, :expired)
+
+      create(:poll_question, :yes_no, poll: expired_poll)
+
+      visit poll_path(expired_poll)
+
+      expect(page).to have_field("Yes", disabled: true)
+      expect(page).to have_field("No", disabled: true)
+      expect(page).to have_button("Vote", disabled: true)
+      expect(page).to have_content("This poll has finished")
+    end
+
+    scenario "Show form errors when any answer is invalid" do
+      poll = create(:poll)
+      open_question = create(:poll_question, poll: poll)
+      single_choice_question = create(:poll_question, :yes_no, poll: poll)
+
+      visit poll_path(poll)
+      click_button "Vote"
+
+      within "#question_#{open_question.id}_answer_fields" do
+        expect(page).to have_content("can't be blank")
+      end
+      within "#question_#{single_choice_question.id}_answer_fields" do
+        expect(page).to have_content("Answer can't be blank")
+        expect(page).to have_content("Answer is not included in the list")
+      end
+    end
+
+    scenario "Show fullfilled form when answers were saved successfully" do
+      poll = create(:poll)
+      open_question = create(:poll_question, poll: poll)
+      single_choice_question = create(:poll_question, :yes_no, poll: poll)
+      visit poll_path(poll)
+
+      fill_in open_question.title, with: "Open answer to question 1"
+      choose "Yes"
+      click_button "Vote"
+
+      expect(page).to have_content("You have already participated in this poll.")
+      expect(page).to have_content("If you vote again it will be overwritten.")
+      within "#question_#{open_question.id}_answer_fields" do
+        expect(page).to have_field(open_question.title, with: "Open answer to question 1")
+      end
+      within "#question_#{single_choice_question.id}_answer_fields" do
+        expect(page).to have_field("Yes", checked: true)
+        expect(page).to have_field("No", checked: false)
       end
     end
 
     scenario "Guest users can answer the poll questions" do
-      Setting["feature.user.skip_verification"] = true
-      question = create(:poll_question, :yes_no, poll: poll)
-
+      create(:poll_question, :yes_no, poll: poll)
       visit poll_path(poll)
 
-      within("#poll_question_#{question.id}_answers") do
-        click_link "Yes"
+      choose "Yes"
+      click_button "Vote"
 
-        expect(page).not_to have_link("Yes")
-        expect(page).to have_link("No")
+      expect(page).to have_content("Poll saved successfully!")
+      expect(page).to have_field("Yes", checked: true)
+      expect(page).to have_field("No", checked: false)
+    end
 
-        click_link "No"
+    scenario "Allow to update answers" do
+      poll = create(:poll)
+      open_question = create(:poll_question, poll: poll)
+      single_choice_question = create(:poll_question, :yes_no, poll: poll)
 
-        expect(page).not_to have_link("No")
-        expect(page).to have_link("Yes")
+      visit poll_path(poll)
+      fill_in open_question.title, with: "Open answer"
+      choose "Yes"
+      click_button "Vote"
+
+      within "#question_#{open_question.id}_answer_fields" do
+        expect(page).to have_field(open_question.title, with: "Open answer")
+      end
+      within "#question_#{single_choice_question.id}_answer_fields" do
+        expect(page).to have_field("Yes", checked: true)
+        expect(page).to have_field("No", checked: false)
+      end
+
+      fill_in open_question.title, with: "Open answer update"
+      choose "No"
+      click_button "Vote"
+
+      expect(page).to have_content("Poll saved successfully!")
+      within "#question_#{open_question.id}_answer_fields" do
+        expect(page).to have_field(open_question.title, with: "Open answer update")
+      end
+      within "#question_#{single_choice_question.id}_answer_fields" do
+        expect(page).to have_field("Yes", checked: false)
+        expect(page).to have_field("No", checked: true)
       end
     end
   end

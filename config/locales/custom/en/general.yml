@@ -1,0 +1,7 @@
+en:
+  polls:
+    answers:
+      create:
+        success_notice: "Poll saved successfully!"
+      form:
+        submit_button: "Vote"
