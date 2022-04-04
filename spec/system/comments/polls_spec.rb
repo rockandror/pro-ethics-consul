@@ -1,6 +1,6 @@
 require "rails_helper"
 
-describe "Commenting polls" do
+describe "Commenting polls", :consul do
   let(:user) { create :user }
   let(:poll) { create(:poll, author: create(:user)) }
 

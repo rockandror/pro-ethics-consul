@@ -67,7 +67,7 @@ describe "Polls" do
       expect(page).not_to have_link("Expired")
     end
 
-    scenario "Displays icon correctly" do
+    scenario "Displays icon correctly", :consul do
       create_list(:poll, 3)
 
       visit polls_path
@@ -242,7 +242,7 @@ describe "Polls" do
       end
     end
 
-    scenario "Non-logged in users" do
+    scenario "Non-logged in users", :consul do
       create(:poll_question, :yes_no, poll: poll)
 
       visit poll_path(poll)
