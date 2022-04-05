@@ -51,7 +51,7 @@ describe "CKEditor" do
     expect(page).not_to have_link "Browse Server"
   end
 
-  context "When navigating back to editor page using browser history back" do
+  context "When navigating back to editor page using browser history back", :consul do
     scenario "display ckeditor unsaved contents", :admin do
       visit new_admin_newsletter_path
       fill_in_ckeditor "Email content", with: "This is an unsaved body"

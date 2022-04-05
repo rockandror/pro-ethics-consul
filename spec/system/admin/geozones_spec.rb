@@ -11,7 +11,7 @@ describe "Admin geozones", :admin do
     expect(page).to have_content(retiro.name)
   end
 
-  scenario "Create new geozone" do
+  scenario "Create new geozone", :consul do
     visit admin_root_path
 
     within("#side_menu") do
