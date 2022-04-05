@@ -68,7 +68,7 @@ describe "Admin" do
     expect(page).not_to have_content "You do not have permission to access this page"
   end
 
-  scenario "Admin access links", :admin do
+  scenario "Admin access links", :admin, :consul do
     Setting["feature.sdg"] = true
 
     visit root_path

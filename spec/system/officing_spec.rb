@@ -18,7 +18,7 @@ describe "Poll Officing" do
     expect(page).to have_content "You do not have permission to access this page"
   end
 
-  scenario "Access as moderator is not authorized" do
+  scenario "Access as moderator is not authorized", :consul do
     create(:moderator, user: user)
 
     login_as(user)
@@ -35,7 +35,7 @@ describe "Poll Officing" do
     expect(page).to have_content "You do not have permission to access this page"
   end
 
-  scenario "Access as manager is not authorized" do
+  scenario "Access as manager is not authorized", :consul do
     create(:manager, user: user)
 
     login_as(user)

@@ -1,6 +1,6 @@
 require "rails_helper"
 
-describe "Moderation" do
+describe "Moderation", :consul do
   let(:user) { create(:user) }
 
   scenario "Access as regular user is not authorized" do
