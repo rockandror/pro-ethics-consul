@@ -30,6 +30,7 @@ class Setting
           "feature.wordpress_login": false,
           "feature.signature_sheets": false,
           "feature.user.recommendations": false,
+          "feature.help_page": false,
           "feature.graphql_api": false,
           "feature.sdg": false,
           "homepage.widgets.feeds.debates": false,
