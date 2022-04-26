@@ -7,8 +7,9 @@ class Abilities::Everyone
     consul_initialize(user)
 
     if user&.guest?
-      can :answer, Poll
-      can :answer, Poll::Question
+      can :answer, Poll do |poll|
+        !poll.expired?
+      end
     end
   end
 end

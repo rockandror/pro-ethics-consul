@@ -93,7 +93,6 @@
 //= require documentable
 //= require imageable
 //= require tree_navigator
-//= require custom
 //= require tag_autocomplete
 //= require polls_admin
 //= require leaflet
@@ -115,6 +114,8 @@
 //= require_tree ./admin
 //= require_tree ./sdg
 //= require_tree ./sdg_management
+//= require custom
+//= require_tree ./custom
 
 var initialize_modules = function() {
   "use strict";

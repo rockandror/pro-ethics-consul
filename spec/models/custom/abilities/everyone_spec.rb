@@ -8,6 +8,6 @@ describe Abilities::Everyone do
     let(:user) { create(:guest) }
 
     it { should be_able_to(:answer, Poll) }
-    it { should be_able_to(:answer, Poll::Question) }
+    it { should_not be_able_to(:answer, create(:poll, :expired)) }
   end
 end
