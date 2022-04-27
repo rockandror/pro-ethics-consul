@@ -30,6 +30,13 @@ describe "Polls" do
   context "Show" do
     let(:poll) { create(:poll) }
 
+    scenario "Navigation" do
+      visit poll_path(poll)
+
+      expect(page).not_to have_link "Back to voting"
+      expect(page).not_to have_link "Back to proposal"
+    end
+
     scenario "Question answers appear in the given order" do
       question = create(:poll_question, poll: poll)
       answer1 = create(:poll_question_answer, title: "First answer", question: question, given_order: 2)

@@ -1,10 +1,10 @@
 <div class="expanded no-margin-top polls-show-header">
   <div class="row">
     <div class="small-12 medium-9 column padding">
-      <% if @poll.related.nil? %>
-        <%= back_link_to polls_path, t("polls.show.back") %>
-      <% else %>
+      <% if @poll.related.present? %>
         <%= link_to t("polls.poll_header.back_to_proposal"), [@poll.related] %>
+      <% elsif Poll.count > 1 %>
+        <%= back_link_to polls_path, t("polls.show.back") %>
       <% end %>
 
       <h1><%= @poll.name %></h1>
