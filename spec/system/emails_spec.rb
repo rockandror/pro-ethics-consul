@@ -148,7 +148,7 @@ describe "Emails" do
     end
   end
 
-  context "Poll comments" do
+  context "Poll comments", :consul do
     let(:user) { create(:user, email_on_comment: true) }
     let(:poll) { create(:poll, author: user) }
 
@@ -432,7 +432,7 @@ describe "Emails" do
     end
   end
 
-  context "Polls" do
+  context "Polls", :consul do
     scenario "Send email on poll comment reply" do
       user1 = create(:user, email_on_comment_reply: true)
       user2 = create(:user)

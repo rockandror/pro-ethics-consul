@@ -1,7 +1,7 @@
 require "rails_helper"
 
 describe "Polls" do
-  context "Concerns" do
+  context "Concerns", :consul do
     it_behaves_like "notifiable in-app", :poll
   end
 

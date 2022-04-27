@@ -1,7 +1,7 @@
 require "rails_helper"
 
 describe "Admin booths", :admin do
-  scenario "Index empty" do
+  scenario "Index empty", :consul do
     visit admin_root_path
 
     within("#side_menu") do
@@ -12,7 +12,7 @@ describe "Admin booths", :admin do
     expect(page).to have_content "There are no active booths for any upcoming poll."
   end
 
-  scenario "Index" do
+  scenario "Index", :consul do
     3.times { create(:poll_booth) }
 
     visit admin_root_path
@@ -32,7 +32,7 @@ describe "Admin booths", :admin do
     expect(page).not_to have_content "There are no booths"
   end
 
-  scenario "Available" do
+  scenario "Available", :consul do
     booth_for_current_poll = create(:poll_booth, polls: [create(:poll, :current)])
     booth_for_expired_poll = create(:poll_booth, polls: [create(:poll, :expired)])
 

@@ -1,6 +1,6 @@
 require "rails_helper"
 
-describe "Admin comments", :admin do
+describe "Admin comments", :admin, :consul do
   scenario "Index" do
     create(:comment, body: "Everything is awesome")
 
