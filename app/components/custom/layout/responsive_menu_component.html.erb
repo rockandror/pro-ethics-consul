@@ -7,7 +7,7 @@
 
 <div id="responsive-menu">
   <div class="top-bar-right">
-    <% if current_user && !current_user.guest || Rails.application.config.sign_in_links %>
+    <% if show_sign_in_links? %>
       <ul class="menu" data-responsive-menu="medium-dropdown">
         <%= render "shared/admin_login_items" %>
         <%= render "layouts/notification_item" %>
