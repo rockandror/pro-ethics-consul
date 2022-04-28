@@ -67,3 +67,10 @@ body:not(.admin) {
 .footer {
   background: #e1f2f0;
 }
+
+.home-page {
+  .header-card,
+  .background-header {
+    background-color: $brand-secondary;
+  }
+}
