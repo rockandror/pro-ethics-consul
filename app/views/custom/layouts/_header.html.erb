@@ -11,37 +11,13 @@
   </div>
 
   <div class="top-bar">
-    <span data-responsive-toggle="responsive-menu" data-hide-for="medium">
-      <button type="button" class="menu-button" data-toggle>
-        <span class="menu-icon"></span>
-        <%= t("application.menu") %>
-      </button>
-    </span>
-
     <h1 class="top-bar-title">
       <%= link_to root_path, accesskey: "0" do %>
         <%= image_tag(image_path_for("logo_header.png"), alt: setting["org_name"]) %>
       <% end %>
     </h1>
 
-    <div id="responsive-menu">
-      <div class="top-bar-right">
-        <% if current_user && !current_user.guest || Rails.application.config.sign_in_links %>
-          <ul class="menu" data-responsive-menu="medium-dropdown">
-            <%= render "shared/admin_login_items" %>
-            <%= render "layouts/notification_item" %>
-            <%= render "devise/menu/login_items" %>
-          </ul>
-        <% end %>
-
-        <div class="show-for-small-only">
-          <div class="subnavigation subnavigation-with-top-links">
-            <%= render "shared/subnavigation" %>
-            <%= render "shared/top_links" %>
-          </div>
-        </div>
-      </div>
-    </div>
+    <%= render Layout::ResponsiveMenuComponent.new %>
   </div>
 
   <div id="navigation_bar" class="subnavigation">
