@@ -20,7 +20,7 @@ describe Layout::LocaleSwitcherComponent do
   context "with many languages" do
     before { allow(I18n).to receive(:available_locales).and_return(%i[de en es fr nl]) }
 
-    it "renders a form to select the language" do
+    it "renders a form to select the language", :consul do
       render_inline component
 
       expect(page).to have_css "form"
@@ -28,13 +28,13 @@ describe Layout::LocaleSwitcherComponent do
       expect(page).not_to have_css "ul"
     end
 
-    it "selects the current locale" do
+    it "selects the current locale", :consul do
       render_inline component
 
       expect(page).to have_select "Language:", selected: "English"
     end
 
-    context "missing language names" do
+    context "missing language names", :consul do
       let!(:default_enforce) { I18n.enforce_available_locales }
 
       before do
