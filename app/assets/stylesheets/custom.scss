@@ -64,8 +64,14 @@ body:not(.admin) {
   }
 }
 
-.footer {
+.footer,
+.polls-show-header,
+.poll-more-info {
   background: #e1f2f0;
+}
+
+.poll-more-info {
+  @include full-width-background;
 }
 
 .home-page {
