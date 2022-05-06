@@ -72,6 +72,8 @@ body:not(.admin) {
 
 .poll-more-info {
   @include full-width-background;
+
+  padding: $line-height 0;
 }
 
 .home-page {
