@@ -23,3 +23,9 @@
     margin-bottom: 0;
   }
 }
+
+.poll-more-info-answers {
+  .column:nth-child(odd) {
+    border-right: 0;
+  }
+}
