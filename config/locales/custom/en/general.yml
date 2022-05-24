@@ -20,3 +20,5 @@ en:
         terms_of_service:
           terms: By answering you accept the %{terms}
           title: By answering you accept the terms and conditions of use
+    show:
+      answers_descriptions_link_text: "Read more"
