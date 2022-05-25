@@ -1,0 +1,5 @@
+es:
+  activerecord:
+    attributes:
+      poll/answer:
+        answer_id: "La respuesta"
