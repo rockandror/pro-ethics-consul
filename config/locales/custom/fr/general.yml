@@ -2,3 +2,24 @@ fr:
   layouts:
     footer:
       consul_url: https://github.com/rockandror/innoviris-consul
+      funding:
+        text: "Ce projet a reçu un financement du programme de recherche et d'innovation Horizon 2020 de l'Union européenne dans le cadre de la convention de subvention n° 872441."
+        logo: "Logo de l'Union européenne"
+      framework:
+        link: "Visitez le cadre Pro-Ethics pro-ethics.eu"
+        logo: "Logo Pro-Ethics"
+  polls:
+    answers:
+      create:
+        success_notice: "Le sondage a été sauvegardé avec succès !"
+      form:
+        submit_button: "Vote"
+        error:
+          one: "1 erreur a empêché l'enregistrement de vos réponses. Veuillez vérifier le champ marqué pour savoir comment le corriger:"
+          other: "%{count} erreurs ont empêché l'enregistrement de vos réponses. Veuillez vérifier les champs marqués pour savoir comment les corriger:"
+        terms_of_service:
+          terms: "En répondant, vous acceptez les %{terms}"
+          title: "En répondant vous acceptez les termes et conditions d'utilisation"
+        postal_code_validator: "Le format du code postal n'est pas valide. Les codes postaux autorisés doivent contenir quatre chiffres."
+    show:
+      answers_descriptions_link_text: "Lire la suite"
