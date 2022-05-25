@@ -109,3 +109,7 @@ body:not(.admin) {
     background-color: $brand-secondary;
   }
 }
+
+.form-error {
+  font-size: $small-font-size;
+}
