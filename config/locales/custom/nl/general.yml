@@ -2,3 +2,24 @@ nl:
   layouts:
     footer:
       consul_url: https://github.com/rockandror/innoviris-consul
+      funding:
+        text: "Dit project heeft financiering ontvangen van het Horizon 2020-onderzoeks- en innovatieprogramma van de Europese Unie onder subsidieovereenkomst nr. 872441."
+        logo: "Logo van de Europese Unie"
+      framework:
+        link: "Bezoek het Pro-Ethics framework pro-ethics.eu"
+        logo: "Pro-Ethics logo"
+  polls:
+    answers:
+      create:
+        success_notice: "Poll succesvol opgeslagen!"
+      form:
+        submit_button: "Stem"
+        error:
+          one: "1 fout heeft verhinderd dat uw antwoorden werden opgeslagen. Controleer het gemarkeerde veld om te weten hoe u het kunt corrigeren:"
+          other: "%{count} fouten hebben verhinderd dat uw antwoorden werden opgeslagen. Controleer de gemarkeerde velden om te weten hoe u ze kunt corrigeren:"
+        terms_of_service:
+          terms: "Door te antwoorden accepteert u de %{terms}"
+          title: "Door te antwoorden accepteer je de gebruiksvoorwaarden"
+        postal_code_validator: "Het postcodeformaat is ongeldig. Toegestane postcodes moeten vier cijfers bevatten."
+    show:
+      answers_descriptions_link_text: "Lees verder"
