@@ -1,0 +1,4 @@
+fr:
+  layouts:
+    footer:
+      consul_url: https://github.com/rockandror/innoviris-consul

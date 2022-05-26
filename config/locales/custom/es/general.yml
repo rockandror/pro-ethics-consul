@@ -1,0 +1,10 @@
+es:
+  layouts:
+    footer:
+      consul_url: https://github.com/rockandror/innoviris-consul
+      funding:
+        text: "Este proyecto ha recibido financiación del programa de investigación e innovación Horizonte 2020 de la Unión Europea en virtud del acuerdo de subvención nº 872441."
+        logo: "Logotipo de la Unión Europea"
+      framework:
+        link: "Visita la página de Pro-Ethics en pro-ethics.eu"
+        logo: "Logotipo de Pro-Ethics"
