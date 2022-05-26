@@ -13,3 +13,10 @@
 
 $brand: #213b87;
 $brand-secondary: #68c0b5;
+$foundation-palette: (
+  primary: #1779ba,
+  secondary: #767676,
+  success: #3adb76,
+  warning: #ffae00,
+  alert: darken(#cc4b37, 1%),
+) !default;
