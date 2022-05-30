@@ -19,7 +19,6 @@ RSpec.describe Poll::Question, type: :model do
 
   describe "#postal_code_validator?" do
     it "returns false when question has no validator" do
-      debugger
       poll_question = create(:poll_question, validator: "none")
 
       expect(poll_question.postal_code_validator?).to be_falsy
