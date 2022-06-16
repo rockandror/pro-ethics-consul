@@ -1,0 +1,5 @@
+nl:
+  activerecord:
+    attributes:
+      poll/answer:
+        answer_id: "Antwoord"

@@ -1,0 +1,5 @@
+ar:
+  activerecord:
+    attributes:
+      poll/answer:
+        answer_id: "إجابه"

@@ -1,6 +1,8 @@
 en:
   activerecord:
     attributes:
+      poll/answer:
+        answer_id: "Answer"
       poll/question:
         mandatory_answer: "Mandatory answer"
       poll/question/translation:

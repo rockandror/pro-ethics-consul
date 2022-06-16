@@ -8,3 +8,18 @@ es:
       framework:
         link: "Visita la página de Pro-Ethics en pro-ethics.eu"
         logo: "Logotipo de Pro-Ethics"
+  polls:
+    answers:
+      create:
+        success_notice: "Votación guardada correctamente."
+      form:
+        submit_button: "Votar"
+        error:
+          one: "1 error ha impedido que se guarden tus respuestas. Por favor, comprueba el campo marcado para saber cómo corregirlo:"
+          other: "%{count} errores han impedido que se guarden tus respuestas. Por favor, comprueba los campos marcados para saber cómo corregirlos:"
+        terms_of_service:
+          terms: "Al responder aceptas los %{terms}"
+          title: "Al responder aceptas los términos y condiciones de uso"
+        postal_code_validator: "El formato del código postal es inválido. Los códigos postales permitidos deben contener cuatro dígitos."
+    show:
+      answers_descriptions_link_text: "Leer más"
