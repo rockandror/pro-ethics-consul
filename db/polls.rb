@@ -66,15 +66,12 @@ poll = Poll.find_or_create_by!(name: "Open poll",
 
 poll.update!(poll_texts)
 
-question_1_title_en = <<~TEXT
-  From your perspective, based on your experiences, what are the major challenges facing the region in the
-  next 20 years? Choose the most important challenge for you
-TEXT
+question_1_title_en = "From your perspective, based on your experiences, what are the major challenges "\
+"facing the region in the next 20 years? Choose the most important challenge for you"
 
-question_1_title_fr = <<~TEXT
-  De votre point de vue, de par vos expériences, à quels défis majeurs la région va devoir faire face dans
-  les 20 prochaines années? Choisissez le défi le plus important pour vous
-TEXT
+question_1_title_fr = "De votre point de vue, de par vos expériences, à quels défis majeurs la région va "\
+"devoir faire face dans les 20 prochaines années? Choisissez le défi le plus important pour vous"
+
 
 # Question 1
 question_1_texts = {
@@ -151,15 +148,11 @@ Poll::Question::Answer.find_or_create_by!(question: question_1, given_order: 7, 
                       .update!(question_1_answer_7_texts)
 
 # Question 2
-question_2_title_en = <<~TEXT
-  From your perspective, based on your experiences, what are the major challenges facing the region in the
-  next 20 years? Choose the second most important challenge for you
-TEXT
+question_2_title_en = "From your perspective, based on your experiences, what are the major challenges "\
+"facing the region in the next 20 years? Choose the second most important challenge for you"
 
-question_2_title_fr = <<~TEXT
-  De votre point de vue, de par vos expériences, à quels défis majeurs la région va devoir faire face dans
-  les 20 prochaines années? Choisissez le deuxième défi le plus important pour vous
-TEXT
+question_2_title_fr = "De votre point de vue, de par vos expériences, à quels défis majeurs la région va "\
+"devoir faire face dans les 20 prochaines années? Choisissez le deuxième défi le plus important pour vous"
 
 question_2_texts = {
   title_en: question_2_title_en,
@@ -235,15 +228,11 @@ Poll::Question::Answer.find_or_create_by!(question: question_2, given_order: 7, 
                       .update!(question_2_answer_7_texts)
 
 # Question 3
-question_3_title_en = <<~TEXT
-  From your perspective, based on your experiences, what are the major challenges facing the region in the
-  next 20 years? Choose the third most important challenge for you
-TEXT
+question_3_title_en = "From your perspective, based on your experiences, what are the major challenges "\
+"facing the region in the next 20 years? Choose the third most important challenge for you"
 
-question_3_title_fr = <<~TEXT
-  De votre point de vue, de par vos expériences, à quels défis majeurs la région va devoir faire face dans
-  les 20 prochaines années? Choisissez le troisième défi le plus important pour vous
-TEXT
+question_3_title_fr = "De votre point de vue, de par vos expériences, à quels défis majeurs la région va "\
+"devoir faire face dans les 20 prochaines années? Choisissez le troisième défi le plus important pour vous"
 
 question_3_texts = {
   title_en: question_3_title_en,
