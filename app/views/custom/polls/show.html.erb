@@ -83,10 +83,10 @@
                 </p>
 
                 <% answer.documents.each do |document| %>
-                    <%= link_to document.title,
-                                document.attachment.url,
-                                target: "_blank",
-                                rel: "nofollow" %><br>
+                  <%= link_to document.title,
+                              document.attachment,
+                              target: "_blank",
+                              rel: "nofollow" %><br>
                 <% end %>
               </div>
             <% end %>
@@ -99,10 +99,10 @@
                 </p>
 
                 <% answer.videos.each do |video| %>
-                    <%= link_to video.title,
-                                video.url,
-                                target: "_blank",
-                                rel: "nofollow" %><br>
+                  <%= link_to video.title,
+                              video.url,
+                              target: "_blank",
+                              rel: "nofollow" %><br>
                 <% end %>
               </div>
             <% end %>
