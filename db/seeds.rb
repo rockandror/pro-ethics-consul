@@ -18,5 +18,6 @@ load Rails.root.join("db", "sdg.rb")
 # Innoviris open survey
 unless Rails.env.test?
   load Rails.root.join("db", "polls.rb")
+  load Rails.root.join("db", "legislation.rb")
   load Rails.root.join("db", "homepage.rb")
 end
