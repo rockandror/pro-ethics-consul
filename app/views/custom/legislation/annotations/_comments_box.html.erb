@@ -16,7 +16,7 @@
     <% end %>
 
     <% if @process.allegations_phase.open? %>
-      <% if user_signed_in? %>
+      <% if user_signed_in? || current_user.guest? %>
         <a class="button publish-comment" href="#"><strong><%= t("legislation.annotations.comments.publish_comment") %></strong></a>
         &nbsp;
         <% css_id = parent_or_commentable_dom_id(nil, annotation) %>

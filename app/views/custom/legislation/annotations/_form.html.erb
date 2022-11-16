@@ -10,7 +10,7 @@
         <div data-alert class="callout primary">
           <%= t("legislation.annotations.form.phase_not_open") %>
         </div>
-      <% elsif user_signed_in? %>
+      <% elsif user_signed_in? || current_user.guest? %>
         <%= form_for Legislation::Annotation.new, url: legislation_process_draft_version_annotations_path(@process, @draft_version), remote: true do |f| %>
           <%= f.text_area :text %>
 

@@ -11,7 +11,7 @@
           </h2>
         <% end %>
 
-        <% if user_signed_in? %>
+        <% if user_signed_in? || current_user&.guest? %>
           <% if comments_closed_for_commentable?(commentable) %>
             <br>
             <div data-alert class="callout primary">
