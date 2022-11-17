@@ -33,5 +33,30 @@ describe "Legislation Draft Versions" do
 
       expect(page).to have_content "this is a comment on my previous annotation"
     end
+
+    scenario "Visit as anonymous allow to vote annotation comments" do
+      visit legislation_process_draft_version_path(draft_version.process, draft_version)
+      find(:css, ".legislation-annotatable").double_click
+      find(:css, ".annotator-adder button").click
+
+      expect(page).to have_field "Comment"
+
+      fill_in "Comment", with: "this is my annotation"
+      click_button "Publish Comment"
+
+      expect(page).to have_css ".annotator-hl"
+
+      first(:css, ".annotator-hl").click
+
+      expect(page).to have_content "this is my annotation"
+
+      first(:css, ".annotator-hl").click
+
+      expect(page).to have_content "No votes"
+
+      click_button "I agree"
+
+      expect(page).to have_content "1 vote"
+    end
   end
 end

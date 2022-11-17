@@ -12,6 +12,7 @@ class Abilities::Everyone
       end
 
       can :create, Comment
+      can :vote, Comment
     end
   end
 end

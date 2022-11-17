@@ -280,7 +280,7 @@ describe "Votes" do
     end
   end
 
-  scenario "Not logged user trying to vote comments in debates" do
+  scenario "Not logged user trying to vote comments in debates", :consul do
     debate = create(:debate)
     comment = create(:comment, commentable: debate)
 
@@ -293,7 +293,7 @@ describe "Votes" do
     expect(page).to have_current_path new_user_session_path
   end
 
-  scenario "Not logged user trying to vote comments in proposals" do
+  scenario "Not logged user trying to vote comments in proposals", :consul do
     proposal = create(:proposal)
     comment = create(:comment, commentable: proposal)
 
