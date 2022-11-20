@@ -124,3 +124,7 @@ body:not(.admin) {
 .form-error {
   font-size: $small-font-size;
 }
+
+.calc-comments {
+  z-index: 1;
+}
