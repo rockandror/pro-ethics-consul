@@ -66,7 +66,7 @@
                    data-legislation-annotatable-base-url="<%= legislation_process_draft_version_path(@process, @draft_version) %>"
                    data-legislation-open-phase="<%= @process.allegations_phase.open? %>">
           <% end %>
-            <%= AdminLegislationSanitizer.new.sanitize(@draft_version.body_html) %>
+            <%= markdown(@draft_version.body, { with_toc_data: true }, { tables: true, footnotes: true }) %>
           </section>
         </div>
       </div>

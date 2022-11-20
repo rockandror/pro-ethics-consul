@@ -1,6 +1,6 @@
 class AdminLegislationSanitizer < WYSIWYGSanitizer
   def allowed_tags
-    super + %w[img h1 h4 h5 h6]
+    super + %w[img h1 h4 h5 h6 table thead th tbody tr td br]
   end
 
   def allowed_attributes
