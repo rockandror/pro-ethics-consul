@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_05_27_095739) do
+ActiveRecord::Schema.define(version: 2022_11_23_104558) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_trgm"
@@ -639,6 +639,13 @@ ActiveRecord::Schema.define(version: 2022_05_27_095739) do
     t.integer "poll_id"
     t.index ["geozone_id"], name: "index_geozones_polls_on_geozone_id"
     t.index ["poll_id"], name: "index_geozones_polls_on_poll_id"
+  end
+
+  create_table "guest_informations", force: :cascade do |t|
+    t.string "email"
+    t.string "name"
+    t.bigint "user_id"
+    t.index ["user_id"], name: "index_guest_informations_on_user_id", unique: true
   end
 
   create_table "i18n_content_translations", id: :serial, force: :cascade do |t|
@@ -1772,6 +1779,7 @@ ActiveRecord::Schema.define(version: 2022_05_27_095739) do
   add_foreign_key "follows", "users"
   add_foreign_key "geozones_polls", "geozones"
   add_foreign_key "geozones_polls", "polls"
+  add_foreign_key "guest_informations", "users"
   add_foreign_key "identities", "users"
   add_foreign_key "images", "users"
   add_foreign_key "legislation_draft_versions", "legislation_processes"
