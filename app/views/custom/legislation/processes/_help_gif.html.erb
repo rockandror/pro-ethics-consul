@@ -7,7 +7,7 @@
       </button>
 
       <div class="dropdown-pane" id="annotator-help" data-dropdown data-auto-focus="true">
-        <% if user_signed_in? %>
+        <% if user_signed_in? || current_user.guest? %>
           <%= t("annotator.help.alt") %>
         <% else %>
           <p>

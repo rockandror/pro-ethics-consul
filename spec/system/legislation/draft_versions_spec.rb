@@ -83,7 +83,7 @@ describe "Legislation Draft Versions" do
       expect(page).to have_content "Text for additional info of the process"
     end
 
-    scenario "show help gif" do
+    scenario "show help gif", :consul do
       visit legislation_process_draft_version_path(process, original)
 
       click_button text: "How can I comment this document?"

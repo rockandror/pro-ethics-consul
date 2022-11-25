@@ -59,4 +59,22 @@ describe "Legislation Draft Versions" do
       expect(page).to have_content "1 vote"
     end
   end
+
+  context "See draft text page" do
+    let(:process) { create(:legislation_process) }
+
+    let!(:original) do
+      create(:legislation_draft_version, process: process, title: "Original",
+                                         body: "Original version", status: "published")
+    end
+
+    scenario "show help gif" do
+      visit legislation_process_draft_version_path(process, original)
+
+      click_button text: "How can I comment this document?"
+
+      expect(page).to have_content "Select the text you want to comment and press the button with the pencil"
+      expect(page).not_to have_content "To comment this document you must sign_in or sign_up."
+    end
+  end
 end
