@@ -1,0 +1,4 @@
+$("#guest-information-form").replaceWith("<%= j render(GuestInformation::FormComponent.new) %>");
+<% if flash.now[:notice] %>
+  $("#guest-information-form-result").html('<div class="callout success"><%= flash.now[:notice] %></div>');
+<% end %>
