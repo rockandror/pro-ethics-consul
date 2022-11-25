@@ -25,4 +25,29 @@ describe "Guest informations" do
       expect(page).to have_content "can't be blank"
     end
   end
+
+  describe "From poll page" do
+    let(:poll) { create(:poll) }
+
+    scenario "Show success notice when contact data is persisted" do
+      visit poll_path(poll)
+
+      fill_in "Name", with: "Tom Cruise"
+      fill_in "Email", with: "tom@cruise.com"
+      click_button "Update"
+
+      expect(page).to have_content "Your contact data was saved successfully!"
+      expect(page).to have_field "Email", with: "tom@cruise.com"
+      expect(page).to have_field "Name", with: "Tom Cruise"
+    end
+
+    scenario "Shows errors when there is validation errors" do
+      visit poll_path(poll)
+
+      fill_in "Name", with: "Tom Cruise"
+      click_button "Update"
+
+      expect(page).to have_content "can't be blank"
+    end
+  end
 end
