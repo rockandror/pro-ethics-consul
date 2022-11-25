@@ -128,3 +128,10 @@ body:not(.admin) {
 .calc-comments {
   z-index: 1;
 }
+
+.guest-information-form {
+  border: 6px solid $border;
+  border-radius: 0.75rem;
+  margin: 3rem;
+  padding: 3rem 1.5rem;
+}
