@@ -10,6 +10,9 @@ class Abilities::Everyone
       can :answer, Poll do |poll|
         !poll.expired?
       end
+
+      can :create, Comment
+      can :vote, Comment
     end
   end
 end

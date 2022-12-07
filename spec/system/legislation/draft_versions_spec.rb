@@ -179,7 +179,7 @@ describe "Legislation Draft Versions" do
 
     before { login_as user }
 
-    scenario "Visit as anonymous" do
+    scenario "Visit as anonymous", :consul do
       logout
 
       visit legislation_process_draft_version_path(draft_version.process, draft_version)

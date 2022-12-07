@@ -214,7 +214,7 @@ describe "Commenting legislation questions" do
   end
 
   describe "Not logged user" do
-    scenario "can not see comments forms" do
+    scenario "can not see comments forms", :consul do
       create(:comment, commentable: legislation_annotation)
       visit legislation_process_draft_version_annotation_path(legislation_annotation.draft_version.process,
                                                               legislation_annotation.draft_version,

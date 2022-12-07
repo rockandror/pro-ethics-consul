@@ -10,7 +10,7 @@ module ApplicationHelper
     %i[ar fa he].include?(locale)
   end
 
-  def markdown(text)
+  def markdown(text, render_options = {}, extensions = {})
     return text if text.blank?
 
     # See https://github.com/vmg/redcarpet for options
@@ -18,7 +18,7 @@ module ApplicationHelper
       filter_html:     false,
       hard_wrap:       true,
       link_attributes: {  target: "_blank" }
-    }
+    }.merge(render_options)
     renderer = Redcarpet::Render::HTML.new(render_options)
     extensions = {
       autolink:           true,
@@ -27,7 +27,7 @@ module ApplicationHelper
       no_intra_emphasis:  true,
       strikethrough:      true,
       superscript:        true
-    }
+    }.merge(extensions)
 
     AdminLegislationSanitizer.new.sanitize(Redcarpet::Markdown.new(renderer, extensions).render(text))
   end
