@@ -1,428 +1,117 @@
 author = Administrator.first.user
 
-poll_description_en = <<~TEXT
-  This participatory process to determine the theme of the "Prospective Research" programme for the
-  Innoviris call for projects in 2023 is being carried out in cooperation with and under the leadership of
-  the European PRO-Ethics project. The aim of the project is to develop an ethical framework for
-  participation processes in innovation policy. To this end, several European funding bodies are
-  simultaneously conducting participation pilot projects and evaluating them in a scientific follow-up.
-  To this end, citizen participation activities are documented by project staff.
+description = <<~TEXT
+  Several RFOs experimented with the Ethics Framework for their stakeholder participation processes.
+  Collective reflections on its practical use revealed difficulties and best practices that may prove
+  valuable for future participatory processes. These lessons learned related to the: recruitment of
+  participants; managing commitment and expectations; fostering of dialogue and equal participation;
+  accommodation of vulnerable groups; creation of funding themes with participants; lack of expertise in
+  participatory ethics; and planning, flexibility, and resources. In what follows, this section elaborates
+  on some of the key insights that emerged from the RFOs’ experiments with the Framework.
 
-  Innoviris makes every effort to ensure the confidentiality and security of the individual data
-  processed. The retention time will be that necessary to achieve the purposes of the processing concerned.
-  If you have any questions or wish to apply your rights under Articles 15 to 22 of the GDPR, please
-  contact dpo@innoviris.brussels.
+  RFOs indicated difficulties in relation to the recruitment of participant. RFOs generally aim for a
+  heterogeneous group of participants that embody the appropriate representation of stakeholders. Nevertheless,
+  it remains difficult to determine what stakeholder representation is appropriate. RFOs selected stakeholders
+  on various aspects, for instance, on their social background, education, age, religion, ethnicity, and gender
+  (identity). But this likewise posed challenges when considering the intersectionality of participants; a
+  participant may identify with multiple stakeholder groups. A possible way forward is to allow stakeholders to
+  categorize themselves according to their own ideas regarding their identity. In addition, the ‘right’
+  representation tends to be understood differently among stakeholders. The context-dependent nature of
+  participatory processes provides that such challenges cannot be addressed in a standardized manner. However,
+  RFOs can consider whether representations that reflect society are desirable, given that the politics among
+  participants will then likely reflect the dynamics found in society. It may, for instance, be desirable in
+  some cases to give minorities an enhanced voice to mitigate power imbalances. RFOs furthermore wrestled with
+  the recruitment of the targeted stakeholders as these were not always willing to participate. RFOs therefore
+  relied on feasible solutions such as snowball sampling and the support of multiplier organisations to compose
+  a group of participants, while acknowledging the drawbacks of such methods (e.g. selection bias).
+
+  Managing commitment and expectations posed challenges as stakeholders have different ideas on R&I, RFOs,
+  and their participatory processes. Experiments suggest it is important to understand and accommodate the
+  needs of participants. Some stakeholder may require different forms of participation, or may need financial
+  compensation. It proved helpful to transparently communicate everyone’s expectations regarding the purpose,
+  process, and outcomes of the participatory process. Such aspects can, for instance, be made explicit in a
+  code of conduct.
+
+  Various difficulties emerged during the participation process in relation to organizing dialogue and equal
+  participation. Because stakeholder participation is frequently characterised by diverse perspectives, it
+  poses the risk of misinterpreting each other. In addition, equal participation is deemed important to obtain
+  all relevant values and worldviews. However, some participants dominated discussions as a result of their
+  personality, knowledge, and institutional role (e.g. citizen vs. scientist). Deploying a skilled mediator
+  may help to mitigate imbalances and involve less vocal participants. It may also help to reduce information
+  asymmetries by either offering or withholding information.
+
+  RFOs indicated challenges related to the accommodation of vulnerable groups. This is especially relevant as
+  participatory processes in research funding often relate to solving real-life problems. The stakeholders
+  affected by these problems may therefore be subject to social injustice, financial issues, or other
+  disadvantages. Because vulnerability is difficult to define and understand, it can help to consider aspects
+  that give rise to stakeholders’ vulnerability such as their resources, abilities, experiences, identities,
+  values, and worldviews. Stakeholders generally have a better idea of their vulnerability. Hence, it can be
+  beneficial to directly ask stakeholders’ perspectives on this as opposed to the RFO making this judgement by
+  itself. RFOs could also help accommodate vulnerable groups based on their own suggestions, and by
+  compensating for the underling aspects that give rise to disadvantages, e.g., through financial
+  compensation, the use of translators, or the enhanced accessibility of meetings.
+
+  In the case of stakeholder participation for the creation of funding themes/priorities, some RFOs
+  experienced difficulties determining how to involve both conventional stakeholders (scientists and
+  innovators) and non-traditional stakeholders (e.g. citizens). RFOs recognized three possible ways to involve
+  them: (1) conventional stakeholders can propose themes, and non-traditional stakeholders can select and
+  contextualize these; (2) non-traditional stakeholders propose themes, and conventional stakeholders select
+  these; or (3) the proposition and selection is done collectively. While it remains unclear what approach is
+  most meaningful, RFOs found that collective discussion can give rise to power imbalances (e.g. based on
+  expertise and status). Allowing non-traditional stakeholders to propose themes provided many socially
+  relevant themes, but where not always considered scientifically relevant. Allowing conventional stakeholders
+  to propose themes, while non-traditional stakeholder selected them appeared most fruitful as this led to
+  scientifically and socially relevant themes. Yet, the appropriate approach likely remains context-dependent.
+
+  While skills and knowledge on ethics is believed to improve stakeholder participation, RFOs frequently
+  lacked ethical expertise. It is therefore helpful to understand that organizing stakeholder participation
+  benefits from a learning-by-doing type of approach that is flexible and open to feedback from it
+  participants. RFOs suggested that the Ethics Framework helps, but that external support from ethicists can
+  further foster the quality of participation.
+
+  Lastly, it is important to stress that while the Ethics Framework strives for the highest ethical standards,
+  this may not always be possible in practice. Organizing stakeholder participation is an uncertain process
+  that tends to unfold differently than planned. One RFO mentioned that “these processes seem way more
+  resource consuming than thought in the beginning”. Participatory processes are furthermore dependent on
+  external factors (e.g. regulation and operational planning). All these challenges provide that it is helpful
+  to have a surplus of resources available, and to have back-up plans in case flexibility is required.
 TEXT
 
-poll_description_fr = <<~TEXT
-  Ce processus participatif pour déterminer le thème du programme "Prospective Research" pour l’appel à
-  projet Innoviris en 2023 est réalisé en coopération avec et sous la direction du projet européen
-  PRO-Ethics. L’objectif du projet est de développer un cadre éthique pour les processus de participation
-  dans la politique d’innovation. À cette fin, plusieurs organismes de financement européens mènent
-  simultanément des projets pilotes de participation et les évaluent dans le cadre d’un suivi scientifique.
-  À cette fin, les activités de participation des citoyens sont documentées par le personnel du projet.
-
-  Innoviris met tout en oeuvre pour garantir la confidentialité et la sécurité des données individuelles
-  traitées. Le temps de rétention sera celui nécessaire pour accomplir les objectifs du traitement concerné.
-  Si vous avez des questions ou que vous désirez appliquer vos droits en vertu des articles15 à 22 du RGPD,
-   veuillez contacter dpo@innoviris.brussels.
+summary = <<~TEXT
+  Bellow the poll you will find the "Part I: Experiences with the Ethics Framework" text, so you can read it before
+  answering.
 TEXT
 
-poll_summary_en = <<~TEXT
-  For a future call, Innoviris would like to consult you, the citizens, on the central Brussels issues
-  that you identify and would like to see worked on by research organisations.
-
-  The research projects will present their policy recommendations to the members of the Brussels
-  Parliament after their completion, with the aim of achieving well thought-out solutions that address
-  the challenge and benefit the well-being of the Brussels population. For Innoviris, it is therefore
-  important to have a good understanding of the most widespread challenges among the Brussels population.
-  These will be further developed in consultation with a panel of citizens.
-  TEXT
-
-poll_summary_fr = <<~TEXT
-  Pour un prochain appel, Innoviris souhaite consulter vous, citoyens, sur les enjeux bruxellois centraux
-  que vous identifiez et que vous souhaiteriez voir travailler par des organismes de recherche.
-
-  Les projets de recherche présenteront leurs recommandations politiques aux membres du Parlement
-  bruxellois après leur achèvement, dans le but d'obtenir des solutions bien pensées qui répondent au défi et
-  bénéficient au bien-être de la population bruxelloise. Pour Innoviris, il est donc important de bien
-  comprendre quels sont les défis les plus répandus parmi la population bruxelloise. Elles seront développées
-  ultérieurement en consultation avec un panel de citoyens.
-  TEXT
-
-poll_texts = {
-  name_en: "Innoviris open poll",
-  name_fr: "Innoviris sondage ouvert",
-  description_en: poll_description_en,
-  description_fr: poll_description_fr,
-  summary_en: poll_summary_en,
-  summary_fr: poll_summary_fr
-}
-poll = Poll.find_or_create_by!(name: "Open poll",
-                               description: "Open poll",
-                               starts_at: Time.current - 1.day,
-                               ends_at: Time.current + 1.month,
-                               author: author)
-
-poll.update!(poll_texts)
-
-question_1_title_en = "From your perspective, based on your experiences, what are the major challenges "\
-"facing the region in the next 20 years? Choose the most important challenge for you"
-
-question_1_title_fr = "De votre point de vue, de par vos expériences, à quels défis majeurs la région va "\
-"devoir faire face dans les 20 prochaines années? Choisissez le défi le plus important pour vous"
-
+poll = Poll.find_or_initialize_by(name: "Experiences with the Ethics Framework")
+poll.description = description
+poll.summary = summary
+poll.starts_at = Time.current - 1.day
+poll.ends_at = Time.current + 1.month
+poll.author = author
+poll.save!
 
 # Question 1
-question_1_texts = {
-  title_en: question_1_title_en,
-  title_fr: question_1_title_fr,
-  description_en: "Choose the most important challenge for you",
-  description_fr: "Choisissez le défi le plus important pour vous"
-}
-question_1 = Poll::Question.find_or_create_by!(poll: poll, author: author, title: "Sample",
-                                               mandatory_answer: true)
-question_1.update!(question_1_texts)
-
-question_1_answer_1_texts = {
-  title_en: "Challenge 1 - buildings independent of external energy suppliers",
-  title_fr: "Défi 1 - des bâtiments indépendants des fournisseurs d'énergie externes",
-  description_en: "<p>Context bla bla bla</p>",
-  description_fr: "<p>Contexte bla bla bla</p>"
-}
-Poll::Question::Answer.find_or_create_by!(question: question_1, given_order: 1, title: "Sample")
-                      .update!(question_1_answer_1_texts)
-
-question_1_answer_2_texts = {
-  title_en: "Challenge 2 - a less curative and more preventive health system",
-  title_fr: "Défi 2 - un système de santé moins curatif et plus préventif",
-  description_en: "<p>Context bla bla bla</p>",
-  description_fr: "<p>Contexte bla bla bla</p>"
-}
-Poll::Question::Answer.find_or_create_by!(question: question_1, given_order: 2, title: "Sample")
-                      .update!(question_1_answer_2_texts)
-
-question_1_answer_3_texts = {
-  title_en: "Challenge 3 ...",
-  title_fr: "Défi 3 ...",
-  description_en: "<p>Context bla bla bla</p>",
-  description_fr: "<p>Contexte bla bla bla</p>"
-}
-Poll::Question::Answer.find_or_create_by!(question: question_1, given_order: 3, title: "Sample")
-                      .update!(question_1_answer_3_texts)
-
-question_1_answer_4_texts = {
-  title_en: "Challenge 4 ...",
-  title_fr: "Défi 4 ...",
-  description_en: "<p>Context bla bla bla</p>",
-  description_fr: "<p>Contexte bla bla bla</p>"
-}
-Poll::Question::Answer.find_or_create_by!(question: question_1, given_order: 4, title: "Sample")
-                      .update!(question_1_answer_4_texts)
-
-question_1_answer_5_texts = {
-  title_en: "Challenge 5 ...",
-  title_fr: "Défi 5 ...",
-  description_en: "<p>Context bla bla bla</p>",
-  description_fr: "<p>Contexte bla bla bla</p>"
-}
-Poll::Question::Answer.find_or_create_by!(question: question_1, given_order: 5, title: "Sample")
-                      .update!(question_1_answer_5_texts)
-
-question_1_answer_6_texts = {
-  title_en: "Challenge 6 ...",
-  title_fr: "Défi 6 ...",
-  description_en: "<p>Context bla bla bla</p>",
-  description_fr: "<p>Contexte bla bla bla</p>"
-}
-Poll::Question::Answer.find_or_create_by!(question: question_1, given_order: 6, title: "Sample")
-                      .update!(question_1_answer_6_texts)
-
-question_1_answer_7_texts = {
-  title_en: "Challenge 7 ...",
-  title_fr: "Défi 7 ...",
-  description_en: "<p>Context bla bla bla</p>",
-  description_fr: "<p>Contexte bla bla bla</p>"
-}
-Poll::Question::Answer.find_or_create_by!(question: question_1, given_order: 7, title: "Sample")
-                      .update!(question_1_answer_7_texts)
+title = <<TEXT
+  Which of the experiences mentioned in Part I do you recognize most and how do you currently
+  address related challenges?
+TEXT
+Poll::Question.find_or_create_by!(poll: poll, author: author, mandatory_answer: true, title: title)
 
 # Question 2
-question_2_title_en = "From your perspective, based on your experiences, what are the major challenges "\
-"facing the region in the next 20 years? Choose the second most important challenge for you"
-
-question_2_title_fr = "De votre point de vue, de par vos expériences, à quels défis majeurs la région va "\
-"devoir faire face dans les 20 prochaines années? Choisissez le deuxième défi le plus important pour vous"
-
-question_2_texts = {
-  title_en: question_2_title_en,
-  title_fr: question_2_title_fr,
-  description_en: "Choose the second most important challenge for you",
-  description_fr: "Choisissez le deuxième défi le plus important pour vous"
-}
-question_2 = Poll::Question.find_or_create_by!(poll: poll, author: author, title: "Sample",
-                                               mandatory_answer: true)
-question_2.update!(question_2_texts)
-
-question_2_answer_1_texts = {
-  title_en: "Challenge 1 - buildings independent of external energy suppliers",
-  title_fr: "Défi 1 - des bâtiments indépendants des fournisseurs d'énergie externes",
-  description_en: "<p>Context bla bla bla</p>",
-  description_fr: "<p>Contexte bla bla bla</p>"
-}
-Poll::Question::Answer.find_or_create_by!(question: question_2, given_order: 1, title: "Sample")
-                      .update!(question_2_answer_1_texts)
-
-question_2_answer_2_texts = {
-  title_en: "Challenge 2 - a less curative and more preventive health system",
-  title_fr: "Défi 2 - un système de santé moins curatif et plus préventif",
-  description_en: "<p>Context bla bla bla</p>",
-  description_fr: "<p>Contexte bla bla bla</p>"
-}
-Poll::Question::Answer.find_or_create_by!(question: question_2, given_order: 2, title: "Sample")
-                      .update!(question_2_answer_2_texts)
-
-question_2_answer_3_texts = {
-  title_en: "Challenge 3 ...",
-  title_fr: "Défi 3 ...",
-  description_en: "<p>Context bla bla bla</p>",
-  description_fr: "<p>Contexte bla bla bla</p>"
-}
-Poll::Question::Answer.find_or_create_by!(question: question_2, given_order: 3, title: "Sample")
-                      .update!(question_2_answer_3_texts)
-
-question_2_answer_4_texts = {
-  title_en: "Challenge 4 ...",
-  title_fr: "Défi 4 ...",
-  description_en: "<p>Context bla bla bla</p>",
-  description_fr: "<p>Contexte bla bla bla</p>"
-}
-Poll::Question::Answer.find_or_create_by!(question: question_2, given_order: 4, title: "Sample")
-                      .update!(question_2_answer_4_texts)
-
-question_2_answer_5_texts = {
-  title_en: "Challenge 5 ...",
-  title_fr: "Défi 5 ...",
-  description_en: "<p>Context bla bla bla</p>",
-  description_fr: "<p>Contexte bla bla bla</p>"
-}
-Poll::Question::Answer.find_or_create_by!(question: question_2, given_order: 5, title: "Sample")
-                      .update!(question_2_answer_5_texts)
-
-question_2_answer_6_texts = {
-  title_en: "Challenge 6 ...",
-  title_fr: "Défi 6 ...",
-  description_en: "<p>Context bla bla bla</p>",
-  description_fr: "<p>Contexte bla bla bla</p>"
-}
-Poll::Question::Answer.find_or_create_by!(question: question_2, given_order: 6, title: "Sample")
-                      .update!(question_2_answer_6_texts)
-
-question_2_answer_7_texts = {
-  title_en: "Challenge 7 ...",
-  title_fr: "Défi 7 ...",
-  description_en: "<p>Context bla bla bla</p>",
-  description_fr: "<p>Contexte bla bla bla</p>"
-}
-Poll::Question::Answer.find_or_create_by!(question: question_2, given_order: 7, title: "Sample")
-                      .update!(question_2_answer_7_texts)
+title = <<TEXT
+  Do you experience obstacles in participatory processes that are currently not or insufficiently mentioned
+  in Part I?
+TEXT
+Poll::Question.find_or_create_by!(poll: poll, author: author, mandatory_answer: true, title: title)
 
 # Question 3
-question_3_title_en = "From your perspective, based on your experiences, what are the major challenges "\
-"facing the region in the next 20 years? Choose the third most important challenge for you"
+title = "Do you have any other suggestions for how to improve this section?"
+Poll::Question.find_or_create_by!(poll: poll, author: author, mandatory_answer: true, title: title)
 
-question_3_title_fr = "De votre point de vue, de par vos expériences, à quels défis majeurs la région va "\
-"devoir faire face dans les 20 prochaines années? Choisissez le troisième défi le plus important pour vous"
-
-question_3_texts = {
-  title_en: question_3_title_en,
-  title_fr: question_3_title_fr,
-  description_en: "Choose the third most important challenge for you",
-  description_fr: "Choisissez le troisième défi le plus important pour vous"
-}
-question_3 = Poll::Question.find_or_create_by!(poll: poll, author: author, title: "Sample",
-                                               mandatory_answer: true)
-question_3.update!(question_3_texts)
-
-question_3_answer_1_texts = {
-  title_en: "Challenge 1 - buildings independent of external energy suppliers",
-  title_fr: "Défi 1 - des bâtiments indépendants des fournisseurs d'énergie externes",
-  description_en: "<p>Context bla bla bla</p>",
-  description_fr: "<p>Contexte bla bla bla</p>"
-}
-Poll::Question::Answer.find_or_create_by!(question: question_3, given_order: 1, title: "Sample")
-                      .update!(question_3_answer_1_texts)
-
-question_3_answer_2_texts = {
-  title_en: "Challenge 2 - a less curative and more preventive health system",
-  title_fr: "Défi 2 - un système de santé moins curatif et plus préventif",
-  description_en: "<p>Context bla bla bla</p>",
-  description_fr: "<p>Contexte bla bla bla</p>"
-}
-Poll::Question::Answer.find_or_create_by!(question: question_3, given_order: 2, title: "Sample")
-                      .update!(question_3_answer_2_texts)
-
-question_3_answer_3_texts = {
-  title_en: "Challenge 3 ...",
-  title_fr: "Défi 3 ...",
-  description_en: "<p>Context bla bla bla</p>",
-  description_fr: "<p>Contexte bla bla bla</p>"
-}
-Poll::Question::Answer.find_or_create_by!(question: question_3, given_order: 3, title: "Sample")
-                      .update!(question_3_answer_3_texts)
-
-question_3_answer_4_texts = {
-  title_en: "Challenge 4 ...",
-  title_fr: "Défi 4 ...",
-  description_en: "<p>Context bla bla bla</p>",
-  description_fr: "<p>Contexte bla bla bla</p>"
-}
-Poll::Question::Answer.find_or_create_by!(question: question_3, given_order: 4, title: "Sample")
-                      .update!(question_3_answer_4_texts)
-
-question_3_answer_5_texts = {
-  title_en: "Challenge 5 ...",
-  title_fr: "Défi 5 ...",
-  description_en: "<p>Context bla bla bla</p>",
-  description_fr: "<p>Contexte bla bla bla</p>"
-}
-Poll::Question::Answer.find_or_create_by!(question: question_3, given_order: 5, title: "Sample")
-                      .update!(question_3_answer_5_texts)
-
-question_3_answer_6_texts = {
-  title_en: "Challenge 6 ...",
-  title_fr: "Défi 6 ...",
-  description_en: "<p>Context bla bla bla</p>",
-  description_fr: "<p>Contexte bla bla bla</p>"
-}
-Poll::Question::Answer.find_or_create_by!(question: question_3, given_order: 6, title: "Sample")
-                      .update!(question_3_answer_6_texts)
-
-question_3_answer_7_texts = {
-  title_en: "Challenge 7 ...",
-  title_fr: "Défi 7 ...",
-  description_en: "<p>Context bla bla bla</p>",
-  description_fr: "<p>Contexte bla bla bla</p>"
-}
-Poll::Question::Answer.find_or_create_by!(question: question_3, given_order: 7, title: "Sample")
-                      .update!(question_3_answer_7_texts)
 # Question 4
-question_4_texts = {
- title_en: "What challenge has not been mentioned above but in your opinion deserves attention?",
- title_fr: "Quel défi n'a pas été mentionné ci-dessus mais mérite, à votre avis, qu'on s'y attarde?"
-}
-Poll::Question.find_or_create_by!(poll: poll, author: author, title: "Sample")
-              .update!(question_4_texts)
+title = "Enter your name or organization name"
+Poll::Question.find_or_create_by!(poll: poll, author: author, mandatory_answer: false, title: title)
 
 # Question 5
-question_5_texts = {
-  title_en: "What is the postal code of your town?",
-  title_fr: "Quel est le code postal de votre commune?"
- }
-Poll::Question.find_or_create_by!(poll: poll, author: author, title: "Sample")
-              .update!(question_5_texts)
-
-# Question 6
-question_6_texts = {
-  title_en: "How old are you?",
-  title_fr: "Quel âge avez-vous?"
- }
-question_6 = Poll::Question.find_or_create_by!(poll: poll, author: author, title: "Sample")
-question_6.update!(question_6_texts)
-
-# Question 5
-question_5_texts = {
-  title_en: "What is your gender?",
-  title_fr: "Quel est votre sexe?"
- }
-question_5 = Poll::Question.find_or_create_by!(poll: poll, author: author, title: "Sample")
-question_5.update!(question_5_texts)
-
-question_5_answer_1_texts = {
-  title_en: "Female",
-  title_fr: "Femme"
-}
-Poll::Question::Answer.find_or_create_by!(question: question_5,
-                                          given_order: 1,
-                                          title: "Sample")
-                      .update!(question_5_answer_1_texts)
-question_5_answer_2_texts = {
-  title_en: "Male",
-  title_fr: "Homme"
-}
-Poll::Question::Answer.find_or_create_by!(question: question_5,
-                                          given_order: 2,
-                                          title: "Sample")
-                      .update!(question_5_answer_2_texts)
-question_5_answer_3_texts = {
-  title_en: "Non-binary",
-  title_fr: "Non-binaire"
-}
-Poll::Question::Answer.find_or_create_by!(question: question_5,
-                                          given_order: 3,
-                                          title: "Sample")
-                      .update!(question_5_answer_3_texts)
-
-# Question 6
-question_6_texts = {
-  title_en: "What is your level of education?",
-  title_fr: "Quel est votre plus haut niveau d'éducation?"
- }
-question_6 = Poll::Question.find_or_create_by!(poll: poll, author: author, title: "Sample")
-question_6.update!(question_6_texts)
-question_6_answer_1_texts = {
-  title_en: "Primary education",
-  title_fr: "L'enseignement primaire"
-}
-Poll::Question::Answer.find_or_create_by!(question: question_6,
-                                          given_order: 1,
-                                          title: "Sample")
-                      .update!(question_6_answer_1_texts)
-question_6_answer_2_texts = {
-  title_en: "Lower secondary education",
-  title_fr: "Enseignement secondaire inférieur"
-}
-Poll::Question::Answer.find_or_create_by!(question: question_6,
-                                          given_order: 2,
-                                          title: "Sample")
-                      .update!(question_6_answer_2_texts)
-question_6_answer_3_texts = {
-  title_en: "Part-time secondary vocational education",
-  title_fr: "Enseignement secondaire professionnel à temps partiel"
-}
-Poll::Question::Answer.find_or_create_by!(question: question_6,
-                                          given_order: 3,
-                                          title: "Sample")
-                      .update!(question_6_answer_3_texts)
-question_6_answer_4_texts = {
-  title_en: "Upper secondary education",
-  title_fr: "Enseignement secondaire supérieur"
-}
-Poll::Question::Answer.find_or_create_by!(question: question_6,
-                                          given_order: 4,
-                                          title: "Sample")
-                      .update!(question_6_answer_4_texts)
-question_6_answer_5_texts = {
-  title_en: "Short term higher education",
-  title_fr: "L'enseignement supérieur type court"
-}
-Poll::Question::Answer.find_or_create_by!(question: question_6,
-                                          given_order: 5,
-                                          title: "Sample")
-                      .update!(question_6_answer_5_texts)
-question_6_answer_6_texts = {
-  title_en: "Long term higher education",
-  title_fr: "L'enseignement supérieur type long"
-}
-Poll::Question::Answer.find_or_create_by!(question: question_6,
-                                          given_order: 6,
-                                          title: "Sample")
-                       .update!(question_6_answer_6_texts)
-
-# Question 7
-question_7_texts = {
-  title_en: "I would like to be informed about the results of this process. Please, enter your email.",
-  title_fr: "Je souhaite être informé des résultats de ce processus. S'il vous plaît, entrez votre email."
- }
-Poll::Question.find_or_create_by!(poll: poll, author: author, title: "Sample")
-              .update!(question_7_texts)
+title = "Enter your email address if you want to receive updates"
+Poll::Question.find_or_create_by!(poll: poll, author: author, mandatory_answer: false, title: title)
