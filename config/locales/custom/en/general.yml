@@ -38,3 +38,9 @@ en:
         postal_code: Postal code
     show:
       answers_descriptions_link_text: "Read more"
+  welcome:
+    introduction: |-
+      <p>Thank you for participating in our consultation. The research project PRO-Ethics is working on an ethics framework to help research funding organizations organize ethical stakeholder participation. With this consultation, we hope to receive input that helps us further improve the framework. The consultation is made up of two parts: a survey and an open annotation process.</p>
+      <p>The survey offers three questions regarding challenges that funding organizations may experience when organizing stakeholder participation (see bottom of the survey webpage). We would like to better understand whether other funding organizations also recognize these experiences, and what other obstacles could impede an ethical participatory process.</p>
+      <p>In the open annotation process, we present the core of the ethics framework, i.e., Part II: Tools & Guidelines. This document gives a brief introduction and offers six main questions designed to guide funding organizations in designing, implementing, and evaluating participatory processes. Please read the document and provide us with any comments you deem relevant for improving the framework. For instance, do you find this part to be helpful, clear, and comprehensive enough for organizing participatory processes? Are there any essential elements missing? Any suggestions for improving the framework are welcome.</p>
+      <p>Thank you very much on behalf of the PRO-Ethics consortium.</p>
