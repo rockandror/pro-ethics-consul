@@ -15,9 +15,10 @@
         <%= errors_for :answer_id %>
       </fieldset>
     <% else %>
-      <%= answer_form.text_field :open_answer, label: question.title,
-                                               hint: question.description,
-                                               disabled: cannot?(:answer, question.poll) %>
+      <%= answer_form.text_area :open_answer, label: question.title,
+                                              rows: 4,
+                                              hint: question.description,
+                                              disabled: cannot?(:answer, question.poll) %>
     <% end %>
   <% end %>
 </div>

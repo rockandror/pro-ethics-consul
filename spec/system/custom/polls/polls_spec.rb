@@ -249,6 +249,16 @@ describe "Polls" do
       expect(page).to have_content("Poll saved successfully!")
     end
 
+    scenario "Does not submit the form when a user hits the enter key while writing an answer" do
+      create(:poll_question, poll: poll, title: "Open question")
+      visit poll_path(poll)
+
+      field = find_field("Open question")
+      field.native.send_keys(:return)
+
+      expect(page).not_to have_content("1 error prevented your answers from being saved")
+    end
+
     describe "Show validator errors" do
       scenario "for postal_code_validator" do
         poll = create(:poll)
