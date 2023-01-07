@@ -85,13 +85,14 @@ body:not(.admin) {
   }
 }
 
-.footer,
 .polls-show-header,
 .poll-more-info {
-  background: #d2dce1;
+  background: $brand-secondary;
 }
 
 .footer {
+  background: #d2dce1;
+
   .logo img {
     @include breakpoint(small only) {
       height: 1.5rem;
