@@ -8,6 +8,16 @@ en:
       framework:
         link: "Visit the Pro-Ethics framework pro-ethics.eu"
         logo: "Pro-Ethics logo"
+  guest_information:
+    title: "Do you want to receive updates?"
+    form:
+      description: "You can enter your name and email address if you want us to send you news and results."
+      submit_button: "Update"
+      title: "Want to stay updated?"
+    update:
+      success_notice: "Your contact data was saved successfully!"
+      alert_error: "The email cannot be blank"
+
   polls:
     answers:
       create:

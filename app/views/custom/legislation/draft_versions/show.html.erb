@@ -41,6 +41,7 @@
     </div>
 
     <%= render "legislation/processes/help_gif" %>
+    <%= render GuestInformation::ScrollToFormComponent.new %>
 
     <div class="draft-allegation">
       <details class="calc-index">
@@ -76,7 +77,8 @@
       <% else %>
         <%= render "comments_panel", draft_version: @draft_version %>
       <% end %>
-
     </div>
   </div>
 </div>
+
+<%= render GuestInformation::FormComponent.new %>

@@ -1,0 +1,18 @@
+<div id="guest-information-form" class="guest-information-form row">
+  <div class="small-12 medium-6 medium-offset-3 column">
+    <h2><%= t("guest_information.form.title") %></h2>
+    <p><%= t("guest_information.form.description") %></p>
+    <div id="guest-information-form-result">
+      <% if flash[:notice] %>
+        <div class="callout success"><%= flash[:notice] %></div>
+      <% elsif flash[:alert] %>
+        <div class="callout alert"><%= flash[:alert] %></div>
+      <% end %>
+    </div>
+    <%= form_for guest_information, remote: true do |f| %>
+      <%= f.text_field :name %>
+      <%= f.email_field :email %>
+      <%= f.submit(t("guest_information.form.submit_button"), class: "button") %>
+    <% end %>
+  </div>
+</div>

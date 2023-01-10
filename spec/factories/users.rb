@@ -117,6 +117,12 @@ FactoryBot.define do
     to_create           { |instance| instance.save(validate: false) }
   end
 
+  factory :guest_information do
+    sequence(:name)  { |n| "Guest #{n}" }
+    sequence(:email) { |n| "guest#{n}@consul.dev" }
+    user
+  end
+
   factory :poll_officer, class: "Poll::Officer" do
     user { association(:user, username: name) }
 
