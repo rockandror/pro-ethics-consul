@@ -1,7 +1,7 @@
 en:
   layouts:
     footer:
-      consul_url: https://github.com/rockandror/innoviris-consul
+      consul_url: https://github.com/rockandror/pro-ethics-consul
       funding:
         text: "This project has received funding from the European Union's Horizon 2020 research and innovation programme under grant agreement No 872441."
         logo: "European Union's logo"
