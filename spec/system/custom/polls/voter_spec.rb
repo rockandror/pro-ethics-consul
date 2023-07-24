@@ -3,7 +3,7 @@ require "rails_helper"
 describe "Voter" do
   context "Origin", :with_frozen_time do
     let(:poll) { create(:poll, :current) }
-    let(:question) { create(:poll_question, poll: poll) }
+    let(:question) { create(:poll_question, :single_choice, poll: poll) }
 
     scenario "Voting via web - Standard" do
       Setting["feature.user.skip_verification"] = true

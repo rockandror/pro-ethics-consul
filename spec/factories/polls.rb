@@ -56,8 +56,15 @@ FactoryBot.define do
     poll
     association :author, factory: :user
     sequence(:title) { |n| "Question title #{n}" }
+    kind { :open_answer }
+
+    trait :single_choice do
+      kind { :single_choice }
+    end
 
     trait :yes_no do
+      kind { :single_choice }
+
       after(:create) do |question|
         create(:poll_question_answer, question: question, title: "Yes")
         create(:poll_question_answer, question: question, title: "No")
@@ -84,6 +91,10 @@ FactoryBot.define do
 
     trait :with_video do
       after(:create) { |answer| create(:poll_answer_video, answer: answer) }
+    end
+
+    after(:create) do |poll_question_answer|
+      poll_question_answer.question.single_choice! if poll_question_answer.question.open_answer?
     end
   end
 

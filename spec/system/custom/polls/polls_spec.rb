@@ -39,7 +39,7 @@ describe "Polls" do
     end
 
     scenario "Question answers appear in the given order" do
-      question = create(:poll_question, poll: poll)
+      question = create(:poll_question, :single_choice, poll: poll)
       answer1 = create(:poll_question_answer, title: "First answer", question: question, given_order: 2)
       answer2 = create(:poll_question_answer, title: "Second answer", question: question, given_order: 1)
 

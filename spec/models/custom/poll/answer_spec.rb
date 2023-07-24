@@ -54,7 +54,7 @@ describe Poll::Answer do
     end
 
     it "is valid for answers included in the Poll::Question's question_answers list" do
-      question = create(:poll_question)
+      question = create(:poll_question, :single_choice)
       create_list(:poll_question_answer, 3, question: question)
 
       expect(build(:poll_answer, question: question, question_answers: question.question_answers)).to be_valid
