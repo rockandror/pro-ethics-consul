@@ -1,7 +1,7 @@
 require "rails_helper"
 
 describe "Admin poll questions", :admin do
-  scenario "Index" do
+  scenario "Index", :consul do
     poll1 = create(:poll)
     poll2 = create(:poll)
     poll3 = create(:poll)
@@ -42,7 +42,7 @@ describe "Admin poll questions", :admin do
     end
   end
 
-  scenario "Show" do
+  scenario "Show", :consul do
     geozone = create(:geozone)
     poll = create(:poll, geozone_restricted: true, geozone_ids: [geozone.id])
     question = create(:poll_question, poll: poll)

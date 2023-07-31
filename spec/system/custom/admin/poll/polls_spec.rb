@@ -192,4 +192,22 @@ describe "Admin polls", :admin do
       expect(page.body).to eq(csv_contents)
     end
   end
+
+  context "Show" do
+    scenario "does not render edit answers link for open answer questions" do
+      question = create(:poll_question, :open_answer)
+
+      visit admin_poll_path(question.poll)
+
+      expect(page).not_to have_link("Edit answers")
+    end
+
+    scenario "renders edit answers link for single and multiple choice questions" do
+      question = create(:poll_question, %i[single_choice multiple_choice].sample)
+
+      visit admin_poll_path(question.poll)
+
+      expect(page).to have_link("Edit answers")
+    end
+  end
 end
