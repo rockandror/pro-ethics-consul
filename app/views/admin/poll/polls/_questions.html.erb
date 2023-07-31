@@ -29,7 +29,7 @@
         </td>
         <td>
           <%= render Admin::TableActionsComponent.new(question) do |actions| %>
-            <%= actions.action(:answers, text: t("admin.polls.show.edit_answers")) %>
+            <%= actions.action(:answers, text: t("admin.polls.show.edit_answers")) unless question.open_answer? %>
           <% end %>
         </td>
       </tr>
