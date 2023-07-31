@@ -25,6 +25,12 @@
       <%= link_to @question.author.name, user_path(@question.author) %>
     </p>
 
+    <p>
+      <strong><%= t("admin.questions.show.kind") %></strong>
+      <br>
+      <%= @question.kind %>
+    </p>
+
     <% if @question.proposal.present? %>
       <p>
         <strong><%= t("admin.questions.show.proposal") %></strong>
