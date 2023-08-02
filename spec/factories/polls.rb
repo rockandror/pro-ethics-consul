@@ -62,6 +62,10 @@ FactoryBot.define do
       kind { :single_choice }
     end
 
+    trait :multiple_choice do
+      kind { :multiple_choice }
+    end
+
     trait :yes_no do
       kind { :single_choice }
 

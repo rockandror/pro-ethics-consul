@@ -11,6 +11,9 @@ class Poll::Answer
   skip_validation :answer, :presence
   skip_validation :answer, :inclusion
 
+  validates :question_answer_ids, presence: true,
+                                  if: ->(a) { a.question&.multiple_choice? && a.question.mandatory_answer? }
+  validate :question_answer_ids_inclussion, if: ->(a) { a.question.present? }
   validates :question_answer_id, presence: true,
                                  if: ->(a) { a.question&.single_choice? && a.question.mandatory_answer? }
   validates :question_answer_id, inclusion: { in: ->(a) { a.question.question_answers.ids }},
@@ -49,4 +52,14 @@ class Poll::Answer
   def question_answer_id
     question_answer_ids&.first
   end
+
+  private
+
+    def question_answer_ids_inclussion
+      return unless question.multiple_choice?
+
+      unless question_answer_ids.all? { |id| question.question_answers.ids.include?(id) }
+        errors.add(:question_answer_ids, :inclussion)
+      end
+    end
 end

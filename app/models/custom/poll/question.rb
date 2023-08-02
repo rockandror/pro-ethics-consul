@@ -1,7 +1,7 @@
 require_dependency Rails.root.join("app", "models", "poll", "question").to_s
 
 class Poll::Question < ApplicationRecord
-  KINDS = { open_answer: 0, single_choice: 1 }.freeze
+  KINDS = { open_answer: 0, single_choice: 1, multiple_choice: 2 }.freeze
   enum kind: KINDS
 
   VALIDATORS = %w[none age postal_code].freeze
