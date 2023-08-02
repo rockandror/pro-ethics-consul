@@ -148,7 +148,7 @@ section "Creating Poll Voters" do
 
       Poll::Answer.create!(question_id: question.id,
                            author: user,
-                           answer: question.question_answers.sample)
+                           question_answer: question.question_answers.sample)
     end
   end
 

@@ -13,7 +13,7 @@ describe "Answers", :admin do
 
   scenario "cannot destroy poll question answers it has related answers" do
     poll_question_answer = create(:poll_question_answer)
-    create(:poll_answer, question: poll_question_answer.question, answer: poll_question_answer)
+    create(:poll_answer, question: poll_question_answer.question, question_answer: poll_question_answer)
 
     visit admin_question_path(poll_question_answer.question)
 

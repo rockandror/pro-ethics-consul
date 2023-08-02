@@ -46,7 +46,7 @@ class PollsController < ApplicationController
       answers = @questions.map do |question|
         Poll::Answer.find_or_initialize_by(question: question, author: current_user).tap do |answer|
           if question.single_choice?
-            answer.answer_id = params.dig("question_#{question.id}", :answer_id)
+            answer.question_answer_id = params.dig("question_#{question.id}", :question_answer_id)
           else
             answer.open_answer = params.dig("question_#{question.id}", :open_answer)
           end
