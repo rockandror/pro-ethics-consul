@@ -73,4 +73,22 @@ describe "Admin poll questions", :admin do
 
     expect(page).to have_field "Validator", with: "postal_code"
   end
+
+  describe "show" do
+    scenario "does not render answers information for open answer questions" do
+      question = create(:poll_question, :open_answer)
+      visit admin_question_path(question)
+
+      expect(page).not_to have_link("Add answer")
+      expect(page).not_to have_content("Valid answers")
+    end
+
+    scenario "renders answers information for single and multiple choice questions" do
+      question = create(:poll_question, %i[single_choice multiple_choice].sample)
+      visit admin_question_path(question)
+
+      expect(page).to have_link("Add answer")
+      expect(page).to have_content("Valid answers")
+    end
+  end
 end
