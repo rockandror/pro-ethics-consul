@@ -53,6 +53,34 @@ describe Poll::Answer do
       end
     end
 
+    describe "when question is multiple choice and mandatory" do
+      let(:question) { create(:poll_question, :multiple_choice, mandatory_answer: true) }
+      let(:question_answers) { create_list(:poll_question_answer, 3, question: question) }
+
+      it "is valid if answer any question answer was chosen" do
+        expect(build(:poll_answer, question_answers: question_answers.sample(1), question: question))
+          .to be_valid
+      end
+
+      it "is not valid if no question answer was chosen" do
+        expect(build(:poll_answer, question_answers: [], question: question)).not_to be_valid
+      end
+    end
+
+    describe "when question is multiple choice and not mandatory" do
+      let(:question) { create(:poll_question, :multiple_choice, mandatory_answer: false) }
+      let(:question_answers) { create_list(:poll_question_answer, 3, question: question) }
+
+      it "is valid if answer is defined" do
+        expect(build(:poll_answer, question_answers: question_answers.sample(1), question: question))
+          .to be_valid
+      end
+
+      it "is valid if answer is empty" do
+        expect(build(:poll_answer, question_answers: [], question: question)).to be_valid
+      end
+    end
+
     it "is valid for answers included in the Poll::Question's question_answers list" do
       question = create(:poll_question, :single_choice)
       create_list(:poll_question_answer, 3, question: question)
@@ -62,6 +90,15 @@ describe Poll::Answer do
       question_answer = create(:poll_question_answer)
 
       expect(build(:poll_answer, question: question, question_answers: [question_answer])).not_to be_valid
+
+      question = create(:poll_question, :multiple_choice)
+      create_list(:poll_question_answer, 3, question: question)
+
+      expect(build(:poll_answer, question: question, question_answer_ids: question.question_answers.ids)).to be_valid
+
+      question_answer = create(:poll_question_answer)
+
+      expect(build(:poll_answer, question: question, question_answer_ids: [question_answer.id])).not_to be_valid
     end
   end
 
