@@ -73,7 +73,7 @@ describe "Polls" do
         expect(page).to have_content("can't be blank")
       end
       within "#question_#{single_choice_question.id}_answer_fields" do
-        expect(page).to have_content("Answer can't be blank")
+        expect(page).to have_content("Question answer can't be blank")
       end
     end
 
