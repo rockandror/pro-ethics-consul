@@ -29,6 +29,8 @@ class Poll::Question::Answer::Exporter
     def value_of(answer)
       if answer.question.single_choice?
         answer.question_answer&.title
+      elsif answer.question.multiple_choice?
+        answer.question_answers.order(given_order: :asc).map(&:title).join(";")
       else
         answer.open_answer
       end
