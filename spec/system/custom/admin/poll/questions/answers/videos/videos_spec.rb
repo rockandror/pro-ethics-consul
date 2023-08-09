@@ -1,8 +1,8 @@
 require "rails_helper"
 
 describe "Videos", :admin do
-  scenario "Create", :consul do
-    question = create(:poll_question)
+  scenario "Create" do
+    question = create(:poll_question, :single_choice)
     answer = create(:poll_question_answer, question: question)
     video_title = "'Magical' by Junko Ohashi"
     video_url = "https://www.youtube.com/watch?v=-JMf43st-1A"

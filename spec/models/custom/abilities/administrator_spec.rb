@@ -14,7 +14,7 @@ describe Abilities::Administrator do
 
   before do
     create(:poll_answer, question: poll_question_answer_with_answers.question,
-                         answer: poll_question_answer_with_answers)
+                         question_answer: poll_question_answer_with_answers)
     create(:poll_partial_result, question: poll_question_answer_with_partial_results.question,
                                  answer: poll_question_answer_with_partial_results)
   end

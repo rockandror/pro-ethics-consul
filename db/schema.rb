@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_11_23_104558) do
+ActiveRecord::Schema.define(version: 2023_08_02_161254) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_trgm"
@@ -645,6 +645,8 @@ ActiveRecord::Schema.define(version: 2022_11_23_104558) do
     t.string "email"
     t.string "name"
     t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_guest_informations_on_user_id", unique: true
   end
 
@@ -1025,9 +1027,7 @@ ActiveRecord::Schema.define(version: 2022_11_23_104558) do
     t.integer "author_id"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.bigint "answer_id"
     t.string "open_answer"
-    t.index ["answer_id"], name: "index_poll_answers_on_answer_id"
     t.index ["author_id"], name: "index_poll_answers_on_author_id"
     t.index ["question_id"], name: "index_poll_answers_on_question_id"
   end
@@ -1062,6 +1062,15 @@ ActiveRecord::Schema.define(version: 2022_11_23_104558) do
   create_table "poll_booths", id: :serial, force: :cascade do |t|
     t.string "name"
     t.string "location"
+  end
+
+  create_table "poll_choices", force: :cascade do |t|
+    t.bigint "answer_id"
+    t.bigint "question_answer_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["answer_id"], name: "index_poll_choices_on_answer_id"
+    t.index ["question_answer_id"], name: "index_poll_choices_on_question_answer_id"
   end
 
   create_table "poll_officer_assignments", id: :serial, force: :cascade do |t|
@@ -1152,6 +1161,7 @@ ActiveRecord::Schema.define(version: 2022_11_23_104558) do
     t.string "video_url"
     t.boolean "mandatory_answer", default: false, null: false
     t.string "validator"
+    t.integer "kind", default: 0
     t.index ["author_id"], name: "index_poll_questions_on_author_id"
     t.index ["poll_id"], name: "index_poll_questions_on_poll_id"
     t.index ["proposal_id"], name: "index_poll_questions_on_proposal_id"
@@ -1790,9 +1800,10 @@ ActiveRecord::Schema.define(version: 2022_11_23_104558) do
   add_foreign_key "moderators", "users"
   add_foreign_key "notifications", "users"
   add_foreign_key "organizations", "users"
-  add_foreign_key "poll_answers", "poll_question_answers", column: "answer_id"
   add_foreign_key "poll_answers", "poll_questions", column: "question_id"
   add_foreign_key "poll_booth_assignments", "polls"
+  add_foreign_key "poll_choices", "poll_answers", column: "answer_id"
+  add_foreign_key "poll_choices", "poll_question_answers", column: "question_answer_id"
   add_foreign_key "poll_officer_assignments", "poll_booth_assignments", column: "booth_assignment_id"
   add_foreign_key "poll_partial_results", "poll_booth_assignments", column: "booth_assignment_id"
   add_foreign_key "poll_partial_results", "poll_officer_assignments", column: "officer_assignment_id"

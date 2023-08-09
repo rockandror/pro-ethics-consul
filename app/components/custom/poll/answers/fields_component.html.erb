@@ -1,24 +1,37 @@
 <div id="<%= "question_#{question.id}_answer_fields" %>" class="<%= styles %>">
   <%= fields_for "question_#{question.id}", answer do |answer_form| %>
-    <% if question.single_choice? %>
+    <% if question.open_answer? %>
+      <%= answer_form.text_area :open_answer, label: question.title,
+                                              rows: 4,
+                                              hint: question.description,
+                                              disabled: cannot?(:answer, question.poll) %>
+    <% else %>
       <fieldset>
         <legend><%= question.title %></legend>
         <% if question.description.present? %>
           <span class="help-text"><%= question.description %></span>
         <% end %>
-        <% question.question_answers.each do |answer| %>
-          <div class="question-answer">
-            <%= answer_form.radio_button :answer_id, answer.id, label: answer.title,
-                                                                disabled: cannot?(:answer, question.poll) %>
-          </div>
+
+        <% if question.single_choice? %>
+          <%= answer_form.collection_radio_buttons(:question_answer_id, question.question_answers, :id, :title) do |b|
+            tag.div class: "question-answer" do
+              b.label do
+                b.radio_button(disabled: cannot?(:answer, question.poll)) + b.text
+              end
+            end
+          end %>
+          <%= errors_for :question_answer_id %>
+        <% elsif question.multiple_choice? %>
+          <%= answer_form.collection_check_boxes(:question_answer_ids, question.question_answers, :id, :title, include_hidden: false) do |b|
+            tag.div class: "question-answer" do
+              b.label do
+                b.check_box(disabled: cannot?(:answer, question.poll)) + b.text
+              end
+            end
+          end %>
+          <%= errors_for :question_answer_ids %>
         <% end %>
-        <%= errors_for :answer_id %>
       </fieldset>
-    <% else %>
-      <%= answer_form.text_area :open_answer, label: question.title,
-                                              rows: 4,
-                                              hint: question.description,
-                                              disabled: cannot?(:answer, question.poll) %>
     <% end %>
   <% end %>
 </div>

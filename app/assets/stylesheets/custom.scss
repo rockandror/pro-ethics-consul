@@ -30,7 +30,8 @@
     margin-bottom: 0.5rem;
   }
 
-  [type="radio"] {
+  [type="radio"],
+  [type="checkbox"] {
     margin-bottom: 0;
   }
 }

@@ -171,11 +171,17 @@ describe "Admin polls", :admin do
       create(:poll_answer, question: question_1, open_answer: "Red", author: user_1)
       create(:poll_answer, question: question_1, open_answer: "Blue", author: user_2)
       question_2 = create(:poll_question, :yes_no, poll: poll, title: "Do you agree?")
-      create(:poll_answer, question: question_2, answer: question_2.question_answers.first, author: user_1)
-      create(:poll_answer, question: question_2, answer: question_2.question_answers.last, author: user_2)
+      create(:poll_answer, question: question_2, question_answer: question_2.question_answers.first, author: user_1)
+      create(:poll_answer, question: question_2, question_answer: question_2.question_answers.last, author: user_2)
       question_3 = create(:poll_question, :yes_no, poll: poll, title: "Do you have environmental concerns?")
-      create(:poll_answer, question: question_3, answer: question_3.question_answers.first, author: user_1)
-      create(:poll_answer, question: question_3, answer: nil, author: user_2)
+      create(:poll_answer, question: question_3, question_answer: question_3.question_answers.first, author: user_1)
+      create(:poll_answer, question: question_3, question_answer: nil, author: user_2)
+      question_4 = create(:poll_question, :multiple_choice, poll: poll, title: "Choose many")
+      option_a = create(:poll_question_answer, question: question_4, title: "Option A")
+      option_b = create(:poll_question_answer, question: question_4, title: "Option B")
+      option_c = create(:poll_question_answer, question: question_4, title: "Option C")
+      create(:poll_answer, question: question_4, question_answers: [option_a, option_c], author: user_1)
+      create(:poll_answer, question: question_4, question_answers: [option_b], author: user_2)
       create(:poll_voter, user: user_1, poll: poll)
       create(:poll_voter, user: user_2, poll: poll)
 
@@ -185,11 +191,29 @@ describe "Admin polls", :admin do
       header = page.response_headers["Content-Disposition"]
       expect(header).to match(/^attachment/)
       expect(header).to match(/filename="questions_to_citizens_questions_answers.csv"$/)
-      csv_contents = "What is your favourite color?,Do you agree?,Do you have environmental concerns?\n"\
-                     "Red,Yes,Yes\n"\
-                     "Blue,No,\n"\
+      csv_contents = "What is your favourite color?,Do you agree?,Do you have environmental concerns?,Choose many\n"\
+                     "Red,Yes,Yes,Option A;Option C\n"\
+                     "Blue,No,,Option B\n"\
 
       expect(page.body).to eq(csv_contents)
+    end
+  end
+
+  context "Show" do
+    scenario "does not render edit answers link for open answer questions" do
+      question = create(:poll_question, :open_answer)
+
+      visit admin_poll_path(question.poll)
+
+      expect(page).not_to have_link("Edit answers")
+    end
+
+    scenario "renders edit answers link for single and multiple choice questions" do
+      question = create(:poll_question, %i[single_choice multiple_choice].sample)
+
+      visit admin_poll_path(question.poll)
+
+      expect(page).to have_link("Edit answers")
     end
   end
 end

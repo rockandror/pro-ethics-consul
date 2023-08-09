@@ -1,13 +1,12 @@
 require_dependency Rails.root.join("app", "models", "poll", "question").to_s
 
 class Poll::Question < ApplicationRecord
+  KINDS = { open_answer: 0, single_choice: 1, multiple_choice: 2 }.freeze
+  enum kind: KINDS
+
   VALIDATORS = %w[none age postal_code].freeze
   translates :description, touch: true
   globalize_accessors
-
-  def single_choice?
-    question_answers.any?
-  end
 
   def postal_code_validator?
     validator == "postal_code"

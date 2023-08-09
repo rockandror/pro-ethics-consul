@@ -7,11 +7,11 @@ describe "Poll Results" do
     user3 = create(:user, :level_two)
 
     poll = create(:poll, results_enabled: true)
-    question1 = create(:poll_question, poll: poll)
+    question1 = create(:poll_question, :single_choice, poll: poll)
     answer1 = create(:poll_question_answer, question: question1, title: "Yes")
     answer2 = create(:poll_question_answer, question: question1, title: "No")
 
-    question2 = create(:poll_question, poll: poll)
+    question2 = create(:poll_question, :single_choice, poll: poll)
     answer3 = create(:poll_question_answer, question: question2, title: "Blue")
     answer4 = create(:poll_question_answer, question: question2, title: "Green")
     answer5 = create(:poll_question_answer, question: question2, title: "Yellow")

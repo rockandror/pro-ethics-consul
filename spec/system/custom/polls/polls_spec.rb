@@ -39,7 +39,7 @@ describe "Polls" do
     end
 
     scenario "Question answers appear in the given order" do
-      question = create(:poll_question, poll: poll)
+      question = create(:poll_question, :single_choice, poll: poll)
       answer1 = create(:poll_question_answer, title: "First answer", question: question, given_order: 2)
       answer2 = create(:poll_question_answer, title: "Second answer", question: question, given_order: 1)
 
@@ -73,7 +73,7 @@ describe "Polls" do
         expect(page).to have_content("can't be blank")
       end
       within "#question_#{single_choice_question.id}_answer_fields" do
-        expect(page).to have_content("Answer can't be blank")
+        expect(page).to have_content("Question answer can't be blank")
       end
     end
 
@@ -116,10 +116,16 @@ describe "Polls" do
       poll = create(:poll)
       open_question = create(:poll_question, poll: poll)
       single_choice_question = create(:poll_question, :yes_no, poll: poll)
+      multiple_choice_question = create(:poll_question, :multiple_choice, poll: poll)
+      create(:poll_question_answer, question: multiple_choice_question, title: "Option A")
+      create(:poll_question_answer, question: multiple_choice_question, title: "Option B")
+      create(:poll_question_answer, question: multiple_choice_question, title: "Option C")
 
       visit poll_path(poll)
       fill_in open_question.title, with: "Open answer"
       choose "Yes"
+      check "Option B"
+      check "Option C"
       check "By answering you accept the terms and conditions of use"
       click_button "Vote"
 
@@ -130,9 +136,17 @@ describe "Polls" do
         expect(page).to have_field("Yes", checked: true)
         expect(page).to have_field("No", checked: false)
       end
+      within "#question_#{multiple_choice_question.id}_answer_fields" do
+        expect(page).to have_field("Option A", checked: false)
+        expect(page).to have_field("Option B", checked: true)
+        expect(page).to have_field("Option C", checked: true)
+      end
 
       fill_in open_question.title, with: "Open answer update"
       choose "No"
+      uncheck "Option B"
+      uncheck "Option C"
+      check "Option A"
       click_button "Vote"
 
       expect(page).to have_content("Poll saved successfully!")
@@ -142,6 +156,11 @@ describe "Polls" do
       within "#question_#{single_choice_question.id}_answer_fields" do
         expect(page).to have_field("Yes", checked: false)
         expect(page).to have_field("No", checked: true)
+      end
+      within "#question_#{multiple_choice_question.id}_answer_fields" do
+        expect(page).to have_field("Option A", checked: true)
+        expect(page).to have_field("Option B", checked: false)
+        expect(page).to have_field("Option C", checked: false)
       end
     end
 

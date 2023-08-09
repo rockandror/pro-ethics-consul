@@ -8,7 +8,7 @@ describe Poll::AnswersForm do
   let(:single_choice_question) { create(:poll_question, :yes_no, mandatory_answer: true) }
   let(:valid_answer_to_single_choice_question) do
     build(:poll_answer, question: single_choice_question,
-                        answer: single_choice_question.question_answers.sample)
+                        question_answer: single_choice_question.question_answers.sample)
   end
 
   describe "validations" do
